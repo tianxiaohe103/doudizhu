@@ -16,7 +16,7 @@ def combine(s, a):
     return s
 
 if __name__ == '__main__':
-    agent = Agent.Agent(models=["rl", "rl", "rl"])
+    agent = Agent(models=["rl", "rl", "rl"])
     runAgent1 = RA.RunAgent(agent, 'player1')
     q_net = Q.DQN_DouDiZhu(ACTION_NUM=runAgent1.ACTION_NUM, STATE_NUM=runAgent1.STATE_NUM, REPLAY_MEMORY=runAgent1.RLMemory, REPLAY_MEMORY_NUM=runAgent1.RLMemory_num, player='player_past')
     pi_net = Pi.Pi(ACTION_NUM=runAgent1.ACTION_NUM, STATE_NUM=runAgent1.STATE_NUM, SLMemory=runAgent1.SLMemory, SLMemory_num=runAgent1.SLMemory_num, player='player_past')
